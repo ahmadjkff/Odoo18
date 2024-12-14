@@ -94,7 +94,7 @@ class Property(models.Model):
                 rec.is_late = False
 
     def action(self):
-        self.search(['state','=','draft']).write({'state':'pending'})
+        print(self.env['property'].search(['|',('name','=','Property1'), ('postcode','!=','123')]))
 
     @api.depends('expected_price', 'selling_price', 'owner_id.phone')
     def _compute_diff(self):
