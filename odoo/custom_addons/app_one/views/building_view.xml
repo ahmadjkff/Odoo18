@@ -1,0 +1,52 @@
+<odoo>
+    <!--list/tree-->
+    <record id="building_view_tree" model="ir.ui.view">
+        <field name="name">building tree</field>
+        <field name="model">building</field>
+        <field name="arch" type="xml">
+            <list  class="header_custom">
+                <field name="name"/>
+                <field name="no"/>
+                <field name="code"/>
+                <field name="description"/>
+            </list>
+        </field>
+    </record>
+
+    <!--Form-->
+    <record id="building_view_form" model="ir.ui.view">
+        <field name="name">building form</field>
+        <field name="model">building</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="General Info.">
+                            <field name="name"/>
+                            <field name="no"/>
+                        </group>
+                        <group string="Additional Info.">
+                            <field name="code"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="building_action" model="ir.actions.act_window">
+        <field name="name">building</field>
+        <field name="res_model">building</field>
+    </record>
+
+    <menuitem
+        id="building_ment_item"
+        name="Buildings"
+        parent="properties_menu"
+        action="building_action"
+    />
+</odoo>

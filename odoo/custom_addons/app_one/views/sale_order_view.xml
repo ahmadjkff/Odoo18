@@ -1,0 +1,17 @@
+<odoo>
+    <record id="view_move_form_inherit" model="ir.ui.view">
+        <field name="name">view move form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="property_id" />
+                <label for="property_id" class="o_form_label"/>
+            </field>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <label for="property_id" class="o_form_label"/>
+                <field name="property_id" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
