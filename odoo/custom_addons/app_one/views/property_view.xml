@@ -28,6 +28,10 @@
             <form>
                 <sheet>
                     <header>
+                    <div name="button_box" class="oe_button_box">
+                        <button name="action_open_property_owner" type="object" icon="fa-user" string="Owner"
+                                invisible="not owner_id"/>
+                    </div>
                         <button name="action" type="object" class="btn-primary" string="Action"/>
                         <button name="draft_action" type="object" class="btn-primary" string="Set To Draft"
                                 invisible="state in ('draft', 'closed')"/>
