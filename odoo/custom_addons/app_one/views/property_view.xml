@@ -27,11 +27,15 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <header>
                     <div name="button_box" class="oe_button_box">
                         <button name="action_open_property_owner" type="object" icon="fa-user" string="Owner"
                                 invisible="not owner_id"/>
                     </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"
+                            style="z-index: 99;"/>
+                    <widget name="web_ribbon" title="Sold" invisible="state != 'sold'"/>
+
+                    <header style="z-index: 0">
                         <button name="action" type="object" class="btn-primary" string="Action"/>
                         <button name="draft_action" type="object" class="btn-primary" string="Set To Draft"
                                 invisible="state in ('draft', 'closed')"/>
