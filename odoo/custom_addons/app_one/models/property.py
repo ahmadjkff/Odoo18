@@ -41,6 +41,7 @@ class Property(models.Model):
         ('sold', 'Sold'),
         ('closed', 'Closed'),
     ], default='draft' ,tracking=1)
+    active = fields.Boolean(default=1)
     create_time = fields.Datetime(default=fields.Datetime.now())
 
     line_ids = fields.One2many('property.line','property_id')
