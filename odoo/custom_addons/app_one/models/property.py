@@ -10,7 +10,7 @@ class Property(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     ref = fields.Char(default='New', readonly=1)
-    name = fields.Char(required=1, default='New')
+    name = fields.Char(required=1, default='New', translate=1)
     description = fields.Text(tracking=1)
     postcode = fields.Char(required=1)
     date_availability = fields.Datetime(tracking=1, compute='_compute_date_availability')
